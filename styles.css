@@ -1,1 +1,48 @@
 /*  your css code here. If applicable */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.otp-wrapper {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 420px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#verification_heading {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#verification_subtext {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.code-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.code {
+    width: 50px;
+    height: 55px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.code:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
