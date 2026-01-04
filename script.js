@@ -1,27 +1,34 @@
 //your JS code here. If required.
-const codes = document.querySelectorAll('.code');
-// Focus first input 
-codes[0].focus();
-codes.forEach((code, index) => {
- code.addEventListener('keydown', (e) => {
-// Allow only digits and backspace
-if (e.key >= '0' && e.key <= '9') {
- code.value = '';
- } else if (e.key !== 'Backspace') {
- e.preventDefault();
-}
-});
-code.addEventListener('input', () => {
-if (code.value && index < codes.length - 1) {
- codes[index + 1].focus();
-}
-});
-code.addEventListener('keydown', (e) => {
-if (e.key === 'Backspace') {
- if (code.value === '' && index > 0) {
-   codes[index - 1].focus();
-    codes[index - 1].value = '';
-}
- }
-  });
+const inputs = document.querySelectorAll(".code");
+
+// focus first input
+inputs[0].focus();
+
+inputs.forEach((input, index) => {
+
+    input.addEventListener("keydown", (e) => {
+
+        //  only numbers & backspace
+        if (e.key >= "0" && e.key <= "9") {
+            input.value = "";
+        } else if (e.key !== "Backspace") {
+            e.preventDefault();
+        }
+
+        // Backspace
+        if (e.key === "Backspace") {
+            if (index > 0) {
+                setTimeout(() => {
+                    inputs[index - 1].focus();
+                }, 0);
+            }
+        }
+    });
+
+    input.addEventListener("input", () => {
+        if (input.value && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+        }
+    });
+
 });
